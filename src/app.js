@@ -16,4 +16,11 @@ app.use(express.urlencoded({ extended: true })); //with extended we can use obje
 app.use(express.static("public")); //configuration for adding publically available assets inside public folder
 app.use(cookieParser()); //config for cookies
 
+// routes import
+import userRouter from "./routes/user.routes.js";
+
+//routes declaration
+app.use("/api/v1/users", userRouter);
+
+
 export { app };
